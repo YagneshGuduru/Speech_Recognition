@@ -3,6 +3,7 @@ import librosa.display
 import matplotlib.pyplot as plt
 import numpy as np
 import soundfile as sf
+import sounddevice as sd
 
 audio_file_path = "data/speech_commands_v0.02/happy/0a2b400e_nohash_0.wav"
 
@@ -22,3 +23,7 @@ plt.title("Waveform of the audio file.")
 plt.xlabel("Time(s)")
 plt.ylabel("Amplitude")
 plt.show()
+
+# Play the audio file.
+sd.play(audio_data, sample_rate)
+sd.wait()
